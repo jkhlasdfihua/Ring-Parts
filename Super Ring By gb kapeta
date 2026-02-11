@@ -4,7 +4,7 @@
 
 local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/nfpw/Simple-KeySystem-Roblox/refs/heads/main/Library.lua"))()
 
-local KeyWindow = Library:CreateWindow("Key System", UDim2.fromOffset(300, 180))
+local KeyWindow = Library:CreateWindow("Ring Parts", UDim2.fromOffset(300, 180))
 
 local KeyBox = KeyWindow:AddTextBox("Enter Key...", UDim2.new(0.1, 0, 0.15, 0))
 local RememberToggle = KeyWindow:AddToggle("Remember Key", UDim2.new(0.1, 0, 0.36, 0), false)
@@ -16,20 +16,13 @@ local FileName = "SavedKey.lua"
 local WatermarkLabel = Library:Create('TextLabel', {
     Position = UDim2.new(0, 0, 1, -20),
     Size = UDim2.new(1, 0, 0, 20),
-    Text = "Super Ring By gb kapeta",
+    Text = "Ring Parts By gb kapeta",
     TextColor3 = Color3.fromRGB(255, 255, 255),
     BackgroundTransparency = 1,
-    TextSize = 14,
+    TextSize = 5,
     TextXAlignment = Enum.TextXAlignment.Center,
     Parent = KeyWindow.Outer.Frame.Frame
 })
-
--- Carrega key salva se existir
-local SavedKey = Library:LoadKey(KeyPath, FileName)
-if SavedKey then
-    KeyBox.Text = SavedKey
-    RememberToggle.SetState(true)
-end
 
 --==================--
 --     MAIN GUI     --
